@@ -1,7 +1,7 @@
 const CONFIG = {
   // Replace this with the client's WhatsApp number.
   // Use international format WITHOUT +, spaces or dashes.
-  whatsappNumber: "2348000000000",
+  whatsappNumber: "2349168815790",
   currency: "₦"
 };
 
