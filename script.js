@@ -15,8 +15,10 @@ const cartCount = document.getElementById("cartCount");
 const cartCountLarge = document.getElementById("cartCountLarge");
 const cartTotal = document.getElementById("cartTotal");
 const toast = document.getElementById("toast");
+const sizeModal=document.getElementById("sizeModal"), sizeProductName=document.getElementById("sizeProductName"), sizeProductPrice=document.getElementById("sizeProductPrice"), sizeOptions=[...document.querySelectorAll("#sizeOptions button")];
 
 let activeFilter = "all";
+let selectedProduct=null, selectedSize=null;
 let cart = JSON.parse(localStorage.getItem("odg_cart") || "[]");
 
 const money = n => `${CONFIG.currency}${Number(n).toLocaleString("en-NG")}`;
@@ -50,7 +52,7 @@ function renderProducts() {
         <h3>${escapeHtml(p.name)}</h3>
         <div class="product-bottom">
           <span class="price">${money(p.price)}</span>
-          <button class="add" aria-label="Add ${escapeHtml(p.name)} to cart" data-add="${p.id}">+</button>
+          <button class="add" aria-label="Add ${escapeHtml(p.name)} to cart" data-size-product="${p.id}">+</button>
         </div>
       </div>`;
     grid.appendChild(card);
@@ -102,13 +104,14 @@ function closeCart(){cartDrawer.classList.remove("open");cartDrawer.setAttribute
 function showToast(text){toast.textContent=text;toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),1800)}
 
 grid.addEventListener("click", e => {
-  const btn = e.target.closest("[data-add]");
-  if (btn) addToCart(btn.dataset.add);
+  const btn = e.target.closest("[data-size-product]");
+  if (btn) openSizeModal(btn.dataset.sizeProduct);
 });
 cartItems.addEventListener("click", e => {
   const btn = e.target.closest("[data-remove]");
   if (btn) removeFromCart(btn.dataset.remove);
 });
+function openSizeModal(id){selectedProduct=PRODUCTS.find(x=>x.id===Number(id));if(!selectedProduct)return;selectedSize=null;sizeProductName.textContent=selectedProduct.name;sizeProductPrice.textContent=money(selectedProduct.price);sizeOptions.forEach(b=>b.classList.remove("active"));sizeModal.classList.add("open");}function closeSizeModal(){sizeModal.classList.remove("open");}sizeOptions.forEach(b=>b.addEventListener("click",()=>{sizeOptions.forEach(x=>x.classList.remove("active"));b.classList.add("active");selectedSize=b.dataset.size;}));document.getElementById("sizeClose").addEventListener("click",closeSizeModal);document.getElementById("sizeBackdrop").addEventListener("click",closeSizeModal);document.getElementById("sizeOrder").addEventListener("click",()=>{if(!selectedSize)return showToast("Please select your size");const msg=`Hello ODG_JERSEYS 👋\n\nI'd like to order:\n• ${selectedProduct.name}\n• Price: ${money(selectedProduct.price)}\n• Size: ${selectedSize}\n\nPlease confirm availability and delivery details.`;window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`,"_blank");closeSizeModal();});
 filters.forEach(btn => btn.addEventListener("click", () => {
   filters.forEach(x => x.classList.remove("active"));
   btn.classList.add("active");
