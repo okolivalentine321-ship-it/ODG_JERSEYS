@@ -20,7 +20,7 @@ const PRODUCTS = [
     id: 1,
     name: "CHELSEA AWAY JERSEY",
     price: 15000,
-    category: "CURRENT JERSEYS",
+    category: "current",
     label: "CLUB",
     image: "chelse awaykit.jpeg",
     description: "Premium Chelsea Away jersey."
@@ -29,7 +29,7 @@ const PRODUCTS = [
     id: 2,
     name: "MANCHESTER UNITED AWAY Jersey",
     price: 15000,
-    category: "CURRENT JERSEYS",
+    category: "current",
     label: "CLUB",
     image: "man u awaykit.jpeg",
     description: "Manchester United Away jersey."
@@ -38,7 +38,7 @@ const PRODUCTS = [
     id: 3,
     name: "BARCELONA AWAY Jersey",
     price: 15000,
-    category: "CURRENT JERSEYS",
+    category: "current",
     label: "CLUB",
     image: "barca awaykit.jpeg",
     description: "Premium Barcelona Away jersey."
@@ -47,7 +47,7 @@ const PRODUCTS = [
     id: 4,
     name: "MANCHESTER UNITED THIRD Jersey",
     price: 15000,
-    category: "CURRENT JERSEYS",
+    category: "current",
     label: "CLUB",
     image: "man u thirdkit.jpeg",
     description: "Premium Manchester United jersey."
