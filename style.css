@@ -41,3 +41,260 @@ body{font-family:Inter,Arial,sans-serif}
 .size-modal{position:fixed;inset:0;z-index:80;pointer-events:none}.size-modal[aria-hidden="false"]{pointer-events:auto}.size-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.74);opacity:0;transition:.25s}.size-box{position:absolute;left:50%;top:50%;transform:translate(-50%,-45%) scale(.96);opacity:0;width:min(420px,calc(100% - 30px));background:#0a100c;border:1px solid rgba(216,182,92,.22);border-radius:20px;padding:28px;transition:.25s}.size-modal[aria-hidden="false"] .size-backdrop{opacity:1}.size-modal[aria-hidden="false"] .size-box{opacity:1;transform:translate(-50%,-50%) scale(1)}.size-close{position:absolute;right:16px;top:12px;background:none;border:0;color:#9aa49e;font-size:26px}.size-options{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin:22px 0}.size-options button{padding:12px 4px;border-radius:9px;border:1px solid rgba(255,255,255,.1);background:#0e1510;color:#aab3ad;font-weight:800}.size-options button.active{background:#20d56d;color:#06100a}
 .product-trust{font:500 10px Inter;line-height:1.65;color:#b2bcb6;margin-top:8px}.product-trust span{color:#d8b65c}
 @media(max-width:680px){.vip-card{grid-template-columns:auto 1fr;padding:22px 18px}.vip-badge{grid-column:1/-1;width:74px;height:74px;font-size:19px}}
+/* ================================
+   ODG_JERSEYS MOBILE FIX
+   ================================ */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* PHONE HERO */
+@media (max-width: 768px) {
+
+  .site-header {
+    width: 100%;
+    padding: 14px 16px;
+  }
+
+  .brand-name {
+    font-size: 13px;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .cart-button {
+    margin-left: auto;
+  }
+
+  .hero {
+    width: 100%;
+    min-height: auto !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 45px 18px 30px !important;
+    gap: 28px !important;
+    overflow: visible !important;
+  }
+
+  .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: left;
+    position: relative !important;
+    z-index: 3;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(30px, 9vw, 48px) !important;
+    line-height: 1.05 !important;
+    word-break: normal;
+  }
+
+  .hero-content p {
+    font-size: 14px !important;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-stats {
+    width: 100%;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .hero-stats > div {
+    min-width: 0 !important;
+  }
+
+  .hero-stats span {
+    font-size: 9px !important;
+    line-height: 1.3;
+  }
+
+  /* CUSTOMER REVIEW BOX */
+  .hero-card {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 420px !important;
+    min-height: 420px !important;
+    right: auto !important;
+    left: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    margin: 0 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 4 !important;
+  }
+
+  .customer-photo {
+    position: absolute !important;
+    inset: 70px 18px 55px !important;
+    width: auto !important;
+    height: auto !important;
+    overflow: hidden !important;
+  }
+
+  .customer-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  .review-quote {
+    display: block !important;
+    left: 10px !important;
+    right: 10px !important;
+    bottom: 10px !important;
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+    z-index: 5 !important;
+  }
+
+  .hero-card-label {
+    z-index: 5 !important;
+  }
+
+  .hero-card-bottom {
+    z-index: 5 !important;
+  }
+
+  /* TICKER */
+  .ticker {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* SHOP */
+  .section {
+    width: 100%;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .section-head {
+    display: block !important;
+  }
+
+  .shop-tools,
+  .search {
+    width: 100% !important;
+  }
+
+  .search input {
+    width: 100%;
+  }
+
+  /* CATEGORY BUTTONS */
+  .filters {
+    width: 100% !important;
+    display: flex !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    gap: 8px !important;
+    padding: 5px 0 12px !important;
+    scrollbar-width: none;
+  }
+
+  .filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+  }
+
+  /* PRODUCTS */
+  .products {
+    width: 100% !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .product-card {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .product-card img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* VIP CARD */
+  .vip-card {
+    width: calc(100% - 32px) !important;
+    margin: 25px 16px 40px !important;
+    padding: 22px 18px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+
+  .vip-card h2 {
+    font-size: 24px !important;
+    line-height: 1.15 !important;
+  }
+
+  .vip-card p {
+    font-size: 13px !important;
+  }
+
+  .vip-badge {
+    align-self: center;
+  }
+
+  /* ABOUT */
+  .about {
+    display: block !important;
+  }
+
+  .about-copy,
+  .about-panel {
+    width: 100% !important;
+  }
+
+  /* CART */
+  .cart-panel {
+    width: min(92vw, 420px) !important;
+    max-width: 92vw !important;
+  }
+
+  /* FLOATING WHATSAPP */
+  .floating-whatsapp {
+    right: 15px !important;
+    bottom: 15px !important;
+    width: 55px !important;
+    height: 55px !important;
+  }
+}
