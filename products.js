@@ -18,38 +18,38 @@
 const PRODUCTS = [
   {
     id: 1,
-    name: "Arsenal Home Jersey",
-    price: 35000,
-    category: "club",
-    label: "NEW DROP",
-    image: "images/arsenal.jpg",
-    description: "Premium Arsenal home jersey."
+    name: "CHELSEA AWAY JERSEY",
+    price: 15000,
+    category: "CURRENT JERSEYS",
+    label: "CLUB",
+    image: "chelse awaykit.jpeg",
+    description: "Premium Chelsea Away jersey."
   },
   {
     id: 2,
-    name: "Real Madrid Home Jersey",
-    price: 38000,
-    category: "club",
-    label: "HOT",
-    image: "images/real-madrid.jpg",
-    description: "Premium Real Madrid home jersey."
+    name: "MANCHESTER UNITED AWAY Jersey",
+    price: 15000,
+    category: "CURRENT JERSEYS",
+    label: "CLUB",
+    image: "man u awaykit.jpeg",
+    description: "Manchester United Away jersey."
   },
   {
     id: 3,
-    name: "Nigeria Home Jersey",
-    price: 40000,
-    category: "national",
-    label: "NATIONAL",
-    image: "images/nigeria.jpg",
-    description: "Premium Nigeria national team jersey."
+    name: "BARCELONA AWAY Jersey",
+    price: 15000,
+    category: "CURRENT JERSEYS",
+    label: "CLUB",
+    image: "barca awaykit.jpeg",
+    description: "Premium Barcelona Away jersey."
   },
   {
     id: 4,
-    name: "Manchester United Jersey",
-    price: 35000,
-    category: "club",
-    label: "FAN FAVOURITE",
-    image: "images/man-united.jpg",
+    name: "MANCHESTER UNITED THIRD Jersey",
+    price: 15000,
+    category: "CURRENT JERSEYS",
+    label: "CLUB",
+    image: "man u thirdkit.jpeg",
     description: "Premium Manchester United jersey."
   },
   {
