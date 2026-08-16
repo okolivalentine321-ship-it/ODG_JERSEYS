@@ -127,16 +127,35 @@ document.addEventListener("keydown", e => {
   if (e.key === "/" && document.activeElement !== searchInput) { e.preventDefault(); searchInput.focus(); }
   if (e.key === "Escape") closeCart();
 });
-document.getElementById("whatsappOrder").addEventListener("click", () => {
-  if (!cart.length) return showToast("Your cart is empty");
-  let total = 0;
-  const lines = cart.map(item => {
-    const p = PRODUCTS.find(x => x.id === item.id);
-    total += p.price * item.qty;
-    return `• ${p.name} × ${item.qty} — ${money(p.price * item.qty)}`;
-  });
-  const message = `Hello ODG_JERSEYS 👋%0A%0AI'd like to order:%0A${encodeURIComponent(lines.join("\n"))}%0A%0ATotal: ${encodeURIComponent(money(total))}%0A%0APlease confirm availability and delivery details.`;
-  window.open(`https://wa.me/${CONFIG.whatsappNumber}?text=${message}`, "_blank", "noopener,noreferrer");
+document.getElementById("sizeOrder").addEventListener("click", () => {
+  if (!selectedSize) {
+    return showToast("Please select your size");
+  }
+
+  const imageUrl = new URL(
+    selectedProduct.image,
+    window.location.href
+  ).href;
+
+  const msg = `Hello ODG_JERSEYS 👋
+
+I'd like to order:
+
+• Jersey: ${selectedProduct.name}
+• Price: ${money(selectedProduct.price)}
+• Size: ${selectedSize}
+
+🖼️ Jersey picture:
+${imageUrl}
+
+Please confirm availability and delivery details.`;
+
+  window.open(
+    `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`,
+    "_blank"
+  );
+
+  closeSizeModal();
 });
 
 document.addEventListener("mousemove", e => {
