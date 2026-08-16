@@ -116,12 +116,30 @@ const PRODUCTS = [
     description: "Premium Real Madrid Away Jersey."
   },
   {
-     id: 6,
+     id: 12,
     name: "LIVERPOOL FC HOME JERSEY",
     price: 15000,
     category: "current",
     label: "NEW",
     image: "Liverpool home.jpeg",
     description: "Premium Liverpool Fc Home Jersey."
+  },
+  {
+     id: 13,
+    name: "ASTON VILLA HOME JERSEY",
+    price: 15000,
+    category: "current",
+    label: "NEW",
+    image: "Astonvilla.jpeg",
+    description: "Premium Aston Villa Home Jersey."
+  },
+  {
+     id: 14,
+    name: "CHELSEA HOME JERSEY",
+    price: 15000,
+    category: "current",
+    label: "NEW",
+    image: "chelsea home.jpeg",
+    description: "Premium Chelsea Home Jersey."
   }
 ];
