@@ -76,7 +76,7 @@ const PRODUCTS = [
     price: 15000,
     category: "current",
     label: "NEW",
-    image: "Madrid white.jpeg",
+    image: "Madrid white .jpeg",
     description: "Premium Real Madrid Home Jersey."
   },
   {
