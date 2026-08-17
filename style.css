@@ -383,11 +383,9 @@ body {
   .site-header .cart-button {
     margin-left: auto !important;
   }
-  .filter {
+ .filters .filter {
   text-transform: uppercase !important;
+  font-variant: normal !important;
 }
-
-  body {
-    padding-top: 68px;
   }
 }
