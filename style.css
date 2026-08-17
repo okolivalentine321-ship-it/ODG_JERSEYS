@@ -383,6 +383,9 @@ body {
   .site-header .cart-button {
     margin-left: auto !important;
   }
+  .filter {
+  text-transform: uppercase !important;
+}
 
   body {
     padding-top: 68px;
