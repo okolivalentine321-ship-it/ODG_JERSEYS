@@ -383,9 +383,4 @@ body {
   .site-header .cart-button {
     margin-left: auto !important;
   }
- .filters .filter {
-  text-transform: uppercase !important;
-  font-variant: normal !important;
-}
-  }
-}
+ 
