@@ -327,41 +327,53 @@ body {
   z-index: 100000;
 }
 /* ================================
-   ODG HEADER — STANDARD WEBSITE LAYOUT
+   FIXED ODG HEADER
    ================================ */
 
 .site-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 99999 !important;
+
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
+
   padding: 16px clamp(20px, 7vw, 110px) !important;
-  min-height: 68px;
+
+  background: rgba(5, 8, 6, 0.95) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+
+  border-bottom: 1px solid rgba(216, 182, 92, 0.12);
 }
 
-/* ODG logo stays on the left */
-.site-header .brand {
-  flex-shrink: 0;
-}
-
-/* SHOP / CATEGORIES / ABOUT move to the right */
+/* Push Shop, Categories & About to the right */
 .site-header .nav {
   display: flex !important;
   align-items: center !important;
-  justify-content: flex-end !important;
   gap: 32px !important;
   margin-left: auto !important;
 }
 
-/* Cart stays at the far right */
+/* Cart stays on the far right */
 .site-header .cart-button {
   margin-left: 24px !important;
-  flex-shrink: 0 !important;
 }
 
-/* Keep everything working properly on phones */
+/* Prevent the fixed header from covering the hero */
+body {
+  padding-top: 68px;
+}
+
+/* Mobile */
 @media (max-width: 680px) {
   .site-header {
     padding: 14px 16px !important;
+    min-height: 68px;
   }
 
   .site-header .nav {
@@ -370,5 +382,9 @@ body {
 
   .site-header .cart-button {
     margin-left: auto !important;
+  }
+
+  body {
+    padding-top: 68px;
   }
 }
