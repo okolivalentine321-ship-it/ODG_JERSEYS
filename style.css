@@ -8,8 +8,8 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;background:rad
 .noise{position:fixed;inset:0;opacity:.035;pointer-events:none;z-index:20;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E")}
 .cursor-glow{position:fixed;width:300px;height:300px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(34,210,107,.07),transparent 65%);transform:translate(-50%,-50%);z-index:-1}
 .site-header {
-  position: -webkit-sticky !important;
-  position: sticky !important;
+  position: -webkit-fixed !important;
+  position: fixed !important;
   top: 0 !important;
   left: 0;
   right: 0;
