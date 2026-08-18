@@ -725,17 +725,13 @@ function checkoutCart() {
 // ================================
 
 const checkoutButton =
-  document.querySelector(
-    "#checkoutWhatsApp, #whatsappCheckout, #checkoutBtn, .whatsapp-btn"
-  );
+  document.getElementById("whatsappOrder");
 
 if (checkoutButton) {
-
   checkoutButton.addEventListener(
     "click",
     checkoutCart
   );
-
 }
 
 
