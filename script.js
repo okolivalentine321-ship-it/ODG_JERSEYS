@@ -23,9 +23,8 @@ const toast = document.getElementById("toast");
 const sizeModal = document.getElementById("sizeModal");
 const sizeProductName = document.getElementById("sizeProductName");
 const sizeProductPrice = document.getElementById("sizeProductPrice");
-const sizeOptions = [
-  ...document.querySelectorAll("#sizeOptions button")
-];
+const sizeOptions = [...document.querySelectorAll("#sizeOptions button")];
+const sizeWhatsapp = document.getElementById("sizeWhatsapp");
 
 const sizeClose = document.getElementById("sizeClose");
 const sizeBackdrop = document.getElementById("sizeBackdrop");
@@ -574,6 +573,46 @@ if (sizeOrder) {
 
     }
   );
+
+}
+// ================================
+// DIRECT WHATSAPP ORDER FROM SIZE MODAL
+// ================================
+
+if (sizeWhatsapp) {
+
+  sizeWhatsapp.addEventListener("click", () => {
+
+    if (!selectedProduct) return;
+
+    if (!selectedSize) {
+      return showToast("Please select your size");
+    }
+
+    const imageUrl = new URL(
+      selectedProduct.image,
+      window.location.href
+    ).href;
+
+    const msg = `Hello ODG_JERSEYS 👋
+
+I'd like to order:
+
+• Jersey: ${selectedProduct.name}
+• Price: ${money(selectedProduct.price)}
+• Size: ${selectedSize}
+
+🖼️ Jersey picture:
+${imageUrl}
+
+Please confirm availability and delivery details.`;
+
+    window.open(
+      `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`,
+      "_blank"
+    );
+
+  });
 
 }
 
