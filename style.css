@@ -484,3 +484,9 @@ body {
   margin-top: 24px !important;
   position: relative !important;
 }
+  /* SIZE MODAL - BUTTON SPACING */
+#sizeOrder + #sizeWhatsapp {
+  margin-top: 30px !important;
+  display: block !important;
+}
+  
