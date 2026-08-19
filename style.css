@@ -489,4 +489,13 @@ body {
   margin-top: 30px !important;
   display: block !important;
 }
+  /* FORCE SIZE MODAL BUTTON SPACING */
+
+#sizeOrder {
+  margin-bottom: 25px !important;
+}
+
+#sizeWhatsapp {
+  margin-top: 0 !important;
+}
   
