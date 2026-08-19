@@ -421,4 +421,58 @@ body {
 .direct-whatsapp-btn span {
   margin-left: 8px;
 }
+  /* ================================
+   SIZE MODAL WHATSAPP BUTTON
+   ================================ */
+
+#sizeWhatsapp {
+  width: 100%;
+  margin-top: 10px;
+  padding: 15px 18px;
+
+  border: 1px solid rgba(34, 210, 107, 0.35);
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    rgba(34, 210, 107, 0.16),
+    rgba(12, 143, 71, 0.12)
+  );
+
+  color: #20d56d;
+
+  font-family: Inter, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .04em;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, .22),
+    inset 0 0 18px rgba(34, 210, 107, .04);
+
+  transition: .25s ease;
+}
+
+#sizeWhatsapp:hover {
+  background: linear-gradient(
+    135deg,
+    #20d56d,
+    #0c984b
+  );
+
+  color: #041008;
+
+  border-color: #20d56d;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(32, 213, 109, .22);
+}
+
+#sizeWhatsapp:active {
+  transform: translateY(0);
+}
  
