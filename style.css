@@ -475,4 +475,6 @@ body {
 #sizeWhatsapp:active {
   transform: translateY(0);
 }
-
+#sizeWhatsapp {
+  margin-top: 12px;
+}
