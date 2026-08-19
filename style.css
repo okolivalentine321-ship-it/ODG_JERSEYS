@@ -383,4 +383,19 @@ body {
   .site-header .cart-button {
     margin-left: auto !important;
   }
+  .about-panel {
+  aspect-ratio: 1.2;
+  border: 1px solid rgba(216,182,92,.18);
+  border-radius: 28px;
+  overflow: hidden;
+  background: #0a0f0c;
+  box-shadow: var(--shadow);
+}
+
+.about-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
  
