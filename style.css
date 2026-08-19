@@ -476,5 +476,5 @@ body {
   transform: translateY(0);
 }
 #sizeWhatsapp {
-  margin-top: 12px;
+  margin-top: 20px !important;
 }
