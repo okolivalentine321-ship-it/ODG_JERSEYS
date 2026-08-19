@@ -486,13 +486,13 @@ body {
 }
   /* SIZE MODAL - BUTTON SPACING */
 #sizeOrder + #sizeWhatsapp {
-  margin-top: 30px !important;
+  margin-top: 35px !important;
   display: block !important;
 }
   /* FORCE SIZE MODAL BUTTON SPACING */
 
 #sizeOrder {
-  margin-bottom: 25px !important;
+  margin-bottom: 30px !important;
 }
 
 #sizeWhatsapp {
