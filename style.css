@@ -398,4 +398,27 @@ body {
   object-fit: cover;
   display: block;
 }
+  /* DIRECT WHATSAPP BUTTON UNDER ADD TO CART */
+.direct-whatsapp-btn {
+  width: 100%;
+  margin-top: 10px;
+  border: 1px solid rgba(34, 210, 107, 0.35);
+  background: rgba(34, 210, 107, 0.08);
+  color: #20d56d;
+  border-radius: 12px;
+  padding: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.direct-whatsapp-btn:hover {
+  background: #20d56d;
+  color: #06100a;
+  transform: translateY(-2px);
+}
+
+.direct-whatsapp-btn span {
+  margin-left: 8px;
+}
  
