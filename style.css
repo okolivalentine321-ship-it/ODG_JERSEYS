@@ -427,7 +427,7 @@ body {
 
 #sizeWhatsapp {
   width: 100%;
-  margin-top: 10px;
+  margin-top: 12px;
   padding: 15px 18px;
 
   border: 1px solid rgba(34, 210, 107, 0.35);
@@ -475,4 +475,4 @@ body {
 #sizeWhatsapp:active {
   transform: translateY(0);
 }
- 
+
