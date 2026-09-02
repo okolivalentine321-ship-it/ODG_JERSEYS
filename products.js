@@ -161,7 +161,7 @@ const PRODUCTS = [
     description: "Premium Portugal Away Jersey."
 },
   {
-     id: 15,
+     id: 17,
     name: "INTER MILLAN HOME JERSEY",
     price: 15000,
     category: "current",
@@ -170,7 +170,7 @@ const PRODUCTS = [
     description: "Premium Inter Millan Jersey" 
 },
  {
-     id: 15,
+     id: 18,
     name: "BARCELONA THIRD JERSEY",
     price: 15000,
     category: "current",
@@ -179,7 +179,7 @@ const PRODUCTS = [
     description: "Premium Barcelona Jersey." 
 },
    {
-     id: 15,
+     id: 19,
     name: "ARSENAL JERSEY",
     price: 15000,
     category: "retro",
@@ -188,7 +188,7 @@ const PRODUCTS = [
     description: "Premium Arsenal Retro Jersey." 
 },  
   {
-     id: 15,
+     id: 20,
     name: "ARGENTINA HOME JERSEY",
     price: 15000,
     category: "national",
@@ -197,7 +197,7 @@ const PRODUCTS = [
     description: "Premium Argentina Jersey." 
 },  
   {
-     id: 15,
+     id: 21,
     name: "BAYERN MUNCHEN AWAY JERSEY",
     price: 15000,
     category: "current",
@@ -305,7 +305,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -313,7 +313,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -321,7 +321,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -329,7 +329,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -337,7 +337,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -345,7 +345,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -353,7 +353,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -361,7 +361,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -369,7 +369,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -377,7 +377,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -385,7 +385,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -393,7 +393,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -401,7 +401,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -409,7 +409,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -417,7 +417,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -425,7 +425,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -433,7 +433,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -441,7 +441,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -449,7 +449,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -457,7 +457,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -465,7 +465,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -473,7 +473,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -481,7 +481,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -489,7 +489,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -497,7 +497,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -505,7 +505,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -513,7 +513,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -521,7 +521,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -529,7 +529,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -537,7 +537,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -545,7 +545,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -553,7 +553,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -561,7 +561,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -569,7 +569,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -577,7 +577,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -585,7 +585,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -593,7 +593,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -601,7 +601,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -609,7 +609,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -617,7 +617,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -625,7 +625,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -633,7 +633,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -641,7 +641,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -649,7 +649,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -657,7 +657,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -665,7 +665,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -673,7 +673,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -681,7 +681,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -689,7 +689,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -697,7 +697,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -705,7 +705,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -713,7 +713,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -721,7 +721,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -729,7 +729,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -737,7 +737,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -745,7 +745,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -753,7 +753,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -761,7 +761,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -769,7 +769,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -777,7 +777,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -785,7 +785,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -793,7 +793,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -801,7 +801,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -809,7 +809,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -817,7 +817,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -825,7 +825,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -833,7 +833,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -841,7 +841,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -849,7 +849,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -857,7 +857,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -865,7 +865,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -873,7 +873,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -881,7 +881,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -889,7 +889,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -897,7 +897,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -905,7 +905,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -913,7 +913,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -921,7 +921,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -929,7 +929,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -937,7 +937,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -945,7 +945,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -953,7 +953,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -961,7 +961,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -969,7 +969,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -977,7 +977,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -985,7 +985,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -993,7 +993,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -1001,7 +1001,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -1009,7 +1009,7 @@ const PRODUCTS = [
 },  {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
@@ -1018,10 +1018,10 @@ const PRODUCTS = [
   {
      id: 15,
     name: "",
-    price: ,
+    price: 15000,
     category: "",
     label: "",
     image: "",
     description: "Premium" 
-}:
+}
 ];
