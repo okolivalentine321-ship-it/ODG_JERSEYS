@@ -173,7 +173,7 @@ function renderProducts() {
 
         <div class="product-trust">
           ✅ Premium Quality<br>
-          ✅ Fast Delivery<br>
+          ✅ Nationwide Delivery<br>
           ✅ Free VIP Discount Card Included<br>
           <span>
             Get 10% OFF your next order when you scan
