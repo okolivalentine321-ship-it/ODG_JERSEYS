@@ -1023,5 +1023,5 @@ const PRODUCTS = [
     label: "",
     image: "",
     description: "Premium" 
-}
+}:
 ];
