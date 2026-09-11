@@ -202,7 +202,7 @@ const PRODUCTS = [
     price: 15000,
     category: "current",
     label: "NEW",
-    image: "",
+    image: "bayern.jpeg",
     description: "Premium Bayern Muchen Away Jersey" 
 },  
   {
@@ -229,7 +229,7 @@ const PRODUCTS = [
     price: 15000,
     category: "current",
     label: "NEW",
-    image: "",
+    image: "dortmund.jpeg",
     description: "Premium Dortmund Jersey" 
 },  {
      id: 15,
@@ -237,7 +237,7 @@ const PRODUCTS = [
     price: 15000,
     category: "current",
     label: "NEW",
-    image: "",
+    image: "bayernr.jpeg",
     description: "Premium Bayern Jersey" 
 },  
   {
@@ -246,7 +246,7 @@ const PRODUCTS = [
     price: 15000,
     category: "national",
     label: "NATIONAL",
-    image: "",
+    image: "portugalr.jpeg",
     description: "Premium Portugal Home Jersey" 
 },  
   {
@@ -255,7 +255,7 @@ const PRODUCTS = [
     price: 15000,
     category: "national",
     label: "NATIONAL",
-    image: "",
+    image: "franceh.jpeg",
     description: "Premium France Home Jersey" 
 },  
   {
@@ -273,7 +273,7 @@ const PRODUCTS = [
     price: 15000,
     category: "retro",
     label: "RETRO",
-    image: "",
+    image: "francer.jpeg",
     description: "Premium France Jersey" 
 },  
   {
@@ -282,7 +282,7 @@ const PRODUCTS = [
     price: 15000,
     category: "retro",
     label: "RETRO",
-    image: "",
+    image: "brazil 1996.jpeg",
     description: "Premium Brazil Jersey" 
 },  
   {
@@ -291,7 +291,7 @@ const PRODUCTS = [
     price: 15000,
     category: "retro",
     label: "RETRO",
-    image: "",
+    image: "brazil 1998.jpeg",
     description: "Premium Brazil jersey" 
 },  
   {
@@ -300,23 +300,23 @@ const PRODUCTS = [
     price: 15000,
     category: "retro",
     label: "RETRO",
-    image: "",
+    image: "brazil 2022.jpeg",
     description: "Premium Brazil Jersey" 
 },  {
      id: 15,
-    name: "",
+    name: "BRAZIL HOME",
     price: 15000,
-    category: "",
-    label: "",
-    image: "",
+    category: "national",
+    label: "NATIONAL",
+    image: "brazil 2026.jpeg",
     description: "Premium" 
 },  {
      id: 15,
-    name: "",
+    name: "ENGLAND HOME",
     price: 15000,
-    category: "",
-    label: "",
-    image: "",
+    category: "retro",
+    label: "RETRO",
+    image: "england retro.jpeg",
     description: "Premium" 
 },  {
      id: 15,
