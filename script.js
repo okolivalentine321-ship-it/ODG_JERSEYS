@@ -40,7 +40,30 @@ const sizeOrder = document.getElementById("sizeOrder");
 // ================================
 // STATE
 // ================================
+// ================================
+// LOAD PRODUCTS FROM SUPABASE
+// ================================
 
+let PRODUCTS = [];
+
+async function loadProducts() {
+  const { data, error } = await supabaseClient
+    .from("products")
+    .select("*")
+    .order("id", { ascending: true });
+
+  if (error) {
+    console.error("Error loading products:", error);
+    showToast("Could not load products");
+    return;
+  }
+
+  PRODUCTS = data || [];
+
+  renderProducts();
+  renderCart();
+}
+loadProducts();
 let activeFilter = "all";
 let selectedProduct = null;
 let selectedSize = null;
