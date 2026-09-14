@@ -50,4 +50,25 @@ const { data: publicUrlData } =
 const imageUrl = publicUrlData.publicUrl;
 
 console.log("Image uploaded:", imageUrl);
+  const { error: insertError } = await supabaseClient
+  .from("products")
+  .insert([
+    {
+      name: name,
+      price: price,
+      category: category,
+      image: imageUrl,
+      description: description
+    }
+  ]);
+
+if (insertError) {
+  console.error(insertError);
+  status.textContent = "Jersey could not be added.";
+  return;
+}
+
+status.textContent = "Jersey added successfully!";
+
+productForm.reset();
 });
