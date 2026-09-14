@@ -74,4 +74,49 @@ if (insertError) {
 status.textContent = "Jersey added successfully!";
 
 productForm.reset();
+async function loadProductsForAdmin() {
+  const productsList = document.getElementById("productsList");
+
+  productsList.innerHTML = "Loading products...";
+
+  const { data, error } = await supabaseClient
+    .from("products")
+    .select("*")
+    .order("id", { ascending: true });
+
+  if (error) {
+    console.error(error);
+    productsList.innerHTML = "Could not load products.";
+    return;
+  }
+
+  if (!data || data.length === 0) {
+    productsList.innerHTML = "No products found.";
+    return;
+  }
+
+  productsList.innerHTML = "";
+
+  data.forEach(product => {
+    const productDiv = document.createElement("div");
+
+    productDiv.innerHTML = `
+      <hr>
+
+      <h3>${product.name}</h3>
+
+      <p>₦${Number(product.price).toLocaleString()}</p>
+
+      <p>${product.category}</p>
+
+      <button onclick="deleteProduct(${product.id})">
+        Delete
+      </button>
+    `;
+
+    productsList.appendChild(productDiv);
+  });
+}
+
+loadProductsForAdmin();
 });
