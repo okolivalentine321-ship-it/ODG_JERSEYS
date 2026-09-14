@@ -203,3 +203,32 @@ async function deleteProduct(id) {
 // ================================
 
 loadProductsForAdmin();
+deleteButton.addEventListener("click", async () => {
+  const productId = deleteProduct.value;
+
+  if (!productId) {
+    alert("Please select a jersey to delete.");
+    return;
+  }
+
+  const confirmed = confirm("Are you sure you want to delete this jersey?");
+
+  if (!confirmed) {
+    return;
+  }
+
+  const { error } = await supabaseClient
+    .from("products")
+    .delete()
+    .eq("id", productId);
+
+  if (error) {
+    console.error("DELETE ERROR:", error);
+    alert("Jersey could not be deleted.");
+    return;
+  }
+
+  alert("Jersey deleted successfully!");
+
+  loadProductsForDelete();
+});
