@@ -11,96 +11,132 @@ console.log("Admin Supabase connected");
 const productForm = document.getElementById("productForm");
 const status = document.getElementById("status");
 
+
+// ================================
+// ADD NEW JERSEY
+// ================================
+
 productForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   status.textContent = "Adding jersey...";
 
   const name = document.getElementById("productName").value;
-  const price = Number(document.getElementById("productPrice").value);
-  const category = document.getElementById("productCategory").value;
-  const imageFile = document.getElementById("productImage").files[0];
+  const price = Number(
+    document.getElementById("productPrice").value
+  );
+  const category =
+    document.getElementById("productCategory").value;
+
+  const imageFile =
+    document.getElementById("productImage").files[0];
+
   const description =
     document.getElementById("productDescription").value;
 
- if (!imageFile) {
-  status.textContent = "Please choose an image.";
-  return;
-}
+  if (!imageFile) {
+    status.textContent = "Please choose an image.";
+    return;
+  }
 
-const fileName =
-  `${Date.now()}-${imageFile.name}`;
+  const fileName =
+    `${Date.now()}-${imageFile.name}`;
 
-const { error: uploadError } =
-  await supabaseClient.storage
-    .from("product-images")
-    .upload(fileName, imageFile);
+  const { error: uploadError } =
+    await supabaseClient.storage
+      .from("product-images")
+      .upload(fileName, imageFile);
 
-if (uploadError) {
-  console.error(uploadError);
-  status.textContent = "Image upload failed.";
-  return;
-}
+  if (uploadError) {
+    console.error(uploadError);
+    status.textContent = "Image upload failed.";
+    return;
+  }
 
-const { data: publicUrlData } =
-  supabaseClient.storage
-    .from("product-images")
-    .getPublicUrl(fileName);
+  const { data: publicUrlData } =
+    supabaseClient.storage
+      .from("product-images")
+      .getPublicUrl(fileName);
 
-const imageUrl = publicUrlData.publicUrl;
+  const imageUrl = publicUrlData.publicUrl;
 
-console.log("Image uploaded:", imageUrl);
-  const { error: insertError } = await supabaseClient
-  .from("products")
-  .insert([
-    {
-      name: name,
-      price: price,
-      category: category,
-      image: imageUrl,
-      description: description
-    }
-  ]);
+  console.log("Image uploaded:", imageUrl);
 
-if (insertError) {
-  console.error("DATABASE ERROR:", insertError);
+  const { error: insertError } =
+    await supabaseClient
+      .from("products")
+      .insert([
+        {
+          name: name,
+          price: price,
+          category: category,
+          image: imageUrl,
+          description: description
+        }
+      ]);
+
+  if (insertError) {
+    console.error("DATABASE ERROR:", insertError);
+
+    status.textContent =
+      `Database error: ${insertError.message}`;
+
+    return;
+  }
 
   status.textContent =
-    `Database error: ${insertError.message}`;
+    "Jersey added successfully!";
 
-  return;
-}
+  productForm.reset();
 
-status.textContent = "Jersey added successfully!";
+  loadProductsForAdmin();
+});
 
-productForm.reset();
+
+// ================================
+// LOAD PRODUCTS
+// ================================
+
 async function loadProductsForAdmin() {
-  const productsList = document.getElementById("productsList");
 
-  productsList.innerHTML = "Loading products...";
+  const productsList =
+    document.getElementById("productsList");
 
-  const { data, error } = await supabaseClient
-    .from("products")
-    .select("*")
-    .order("id", { ascending: true });
-    console.log("ADMIN PRODUCTS:", data);
-console.log("ADMIN ERROR:", error);
+  productsList.innerHTML =
+    "Loading products...";
+
+  const { data, error } =
+    await supabaseClient
+      .from("products")
+      .select("*")
+      .order("id", { ascending: true });
+
+  console.log("ADMIN PRODUCTS:", data);
+  console.log("ADMIN ERROR:", error);
 
   if (error) {
     console.error(error);
-    productsList.innerHTML = "Could not load products.";
+
+    productsList.innerHTML =
+      "Could not load products.";
+
     return;
   }
 
   if (!data || data.length === 0) {
-    productsList.innerHTML = "No products found.";
+
+    productsList.innerHTML =
+      "No products found.";
+
     return;
   }
 
   productsList.innerHTML = "";
 
   data.forEach(product => {
-    const productDiv = document.createElement("div");
+
+    const productDiv =
+      document.createElement("div");
 
     productDiv.innerHTML = `
       <hr>
@@ -117,30 +153,53 @@ console.log("ADMIN ERROR:", error);
     `;
 
     productsList.appendChild(productDiv);
+
   });
 }
 
-loadProductsForAdmin();
+
+// ================================
+// DELETE PRODUCT
+// ================================
+
 async function deleteProduct(id) {
-  const confirmed = confirm("Are you sure you want to delete this jersey?");
+
+  const confirmed =
+    confirm(
+      "Are you sure you want to delete this jersey?"
+    );
 
   if (!confirmed) {
     return;
   }
 
-  const { error } = await supabaseClient
-    .from("products")
-    .delete()
-    .eq("id", id);
+  const { error } =
+    await supabaseClient
+      .from("products")
+      .delete()
+      .eq("id", id);
 
   if (error) {
+
     console.error(error);
-    alert("Could not delete the jersey.");
+
+    alert(
+      "Could not delete the jersey."
+    );
+
     return;
   }
 
-  alert("Jersey deleted successfully.");
+  alert(
+    "Jersey deleted successfully."
+  );
 
   loadProductsForAdmin();
 }
-});
+
+
+// ================================
+// LOAD PRODUCTS WHEN PAGE OPENS
+// ================================
+
+loadProductsForAdmin();
