@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>ODG JERSEYS | Admin</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+  <h1>ODG JERSEYS Admin</h1>
+
+  <h2>Add New Jersey</h2>
+
+  <form id="productForm">
+
+    <label>
+      Jersey Name
+      <input
+        type="text"
+        id="productName"
+        required
+      >
+    </label>
+
+    <br><br>
+
+    <label>
+      Price
+      <input
+        type="number"
+        id="productPrice"
+        required
+      >
+    </label>
+
+    <br><br>
+
+    <label>
+      Category
+      <select id="productCategory" required>
+        <option value="">Select category</option>
+        <option value="club">Club</option>
+        <option value="national">National</option>
+        <option value="retro">Retro</option>
+      </select>
+    </label>
+
+    <br><br>
+
+    <label>
+      Image
+      <input
+        type="file"
+        id="productImage"
+        accept="image/*"
+        required
+      >
+    </label>
+
+    <br><br>
+
+    <label>
+      Description
+      <textarea
+        id="productDescription"
+        rows="4"
+      ></textarea>
+    </label>
+
+    <br><br>
+
+    <button type="submit">
+      Add Jersey
+    </button>
+
+  </form>
+
+  <p id="status"></p>
+
+  <script src="admin.js"></script>
+
+</body>
+</html>
