@@ -63,8 +63,11 @@ console.log("Image uploaded:", imageUrl);
   ]);
 
 if (insertError) {
-  console.error(insertError);
-  status.textContent = "Jersey could not be added.";
+  console.error("DATABASE ERROR:", insertError);
+
+  status.textContent =
+    `Database error: ${insertError.message}`;
+
   return;
 }
 
