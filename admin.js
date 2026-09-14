@@ -23,11 +23,31 @@ productForm.addEventListener("submit", async (event) => {
   const description =
     document.getElementById("productDescription").value;
 
-  console.log({
-    name,
-    price,
-    category,
-    imageFile,
-    description
-  });
+ if (!imageFile) {
+  status.textContent = "Please choose an image.";
+  return;
+}
+
+const fileName =
+  `${Date.now()}-${imageFile.name}`;
+
+const { error: uploadError } =
+  await supabaseClient.storage
+    .from("product-images")
+    .upload(fileName, imageFile);
+
+if (uploadError) {
+  console.error(uploadError);
+  status.textContent = "Image upload failed.";
+  return;
+}
+
+const { data: publicUrlData } =
+  supabaseClient.storage
+    .from("product-images")
+    .getPublicUrl(fileName);
+
+const imageUrl = publicUrlData.publicUrl;
+
+console.log("Image uploaded:", imageUrl);
 });
