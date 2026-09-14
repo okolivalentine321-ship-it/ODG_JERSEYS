@@ -8,3 +8,26 @@ const supabaseClient = supabase.createClient(
 
 console.log("Admin Supabase connected");
 
+const productForm = document.getElementById("productForm");
+const status = document.getElementById("status");
+
+productForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  status.textContent = "Adding jersey...";
+
+  const name = document.getElementById("productName").value;
+  const price = Number(document.getElementById("productPrice").value);
+  const category = document.getElementById("productCategory").value;
+  const imageFile = document.getElementById("productImage").files[0];
+  const description =
+    document.getElementById("productDescription").value;
+
+  console.log({
+    name,
+    price,
+    category,
+    imageFile,
+    description
+  });
+});
