@@ -119,4 +119,26 @@ async function loadProductsForAdmin() {
 }
 
 loadProductsForAdmin();
+async function deleteProduct(id) {
+  const confirmed = confirm("Are you sure you want to delete this jersey?");
+
+  if (!confirmed) {
+    return;
+  }
+
+  const { error } = await supabaseClient
+    .from("products")
+    .delete()
+    .eq("id", id);
+
+  if (error) {
+    console.error(error);
+    alert("Could not delete the jersey.");
+    return;
+  }
+
+  alert("Jersey deleted successfully.");
+
+  loadProductsForAdmin();
+}
 });
