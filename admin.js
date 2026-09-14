@@ -83,6 +83,8 @@ async function loadProductsForAdmin() {
     .from("products")
     .select("*")
     .order("id", { ascending: true });
+    console.log("ADMIN PRODUCTS:", data);
+console.log("ADMIN ERROR:", error);
 
   if (error) {
     console.error(error);
