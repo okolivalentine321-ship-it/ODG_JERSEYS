@@ -320,3 +320,4 @@ updateButton.addEventListener("click", async () => {
   loadProductsForEdit();
   loadProductsForDelete();
 });
+const editImage = document.getElementById("editImage");
