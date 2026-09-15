@@ -232,3 +232,36 @@ deleteButton.addEventListener("click", async () => {
 
   loadProductsForDelete();
 });
+const editProduct = document.getElementById("editProduct");
+const editName = document.getElementById("editName");
+const editPrice = document.getElementById("editPrice");
+const editCategory = document.getElementById("editCategory");
+const editDescription = document.getElementById("editDescription");
+const updateButton = document.getElementById("updateButton");
+
+async function loadProductsForEdit() {
+  const { data, error } = await supabaseClient
+    .from("products")
+    .select("*")
+    .order("id", { ascending: true });
+
+  if (error) {
+    console.error("EDIT LOAD ERROR:", error);
+    return;
+  }
+
+  editProduct.innerHTML =
+    '<option value="">Select jersey to edit</option>';
+
+  data.forEach((product) => {
+    const option = document.createElement("option");
+
+    option.value = product.id;
+    option.textContent = product.name;
+
+    editProduct.appendChild(option);
+  });
+}
+
+loadProductsForEdit();
+
