@@ -264,4 +264,30 @@ async function loadProductsForEdit() {
 }
 
 loadProductsForEdit();
+editProduct.addEventListener("change", async () => {
+  const productId = editProduct.value;
 
+  if (!productId) {
+    editName.value = "";
+    editPrice.value = "";
+    editCategory.value = "";
+    editDescription.value = "";
+    return;
+  }
+
+  const { data, error } = await supabaseClient
+    .from("products")
+    .select("*")
+    .eq("id", productId)
+    .single();
+
+  if (error) {
+    console.error("EDIT PRODUCT ERROR:", error);
+    return;
+  }
+
+  editName.value = data.name || "";
+  editPrice.value = data.price || "";
+  editCategory.value = data.category || "";
+  editDescription.value = data.description || "";
+});
