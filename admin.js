@@ -291,3 +291,32 @@ editProduct.addEventListener("change", async () => {
   editCategory.value = data.category || "";
   editDescription.value = data.description || "";
 });
+updateButton.addEventListener("click", async () => {
+  const productId = editProduct.value;
+
+  if (!productId) {
+    alert("Please select a jersey to edit.");
+    return;
+  }
+
+  const { error } = await supabaseClient
+    .from("products")
+    .update({
+      name: editName.value,
+      price: Number(editPrice.value),
+      category: editCategory.value,
+      description: editDescription.value
+    })
+    .eq("id", productId);
+
+  if (error) {
+    console.error("UPDATE ERROR:", error);
+    alert("Jersey could not be updated.");
+    return;
+  }
+
+  alert("Jersey updated successfully!");
+
+  loadProductsForEdit();
+  loadProductsForDelete();
+});
