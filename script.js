@@ -184,9 +184,7 @@ function renderProducts() {
           <span>ODG<br>JERSEYS</span>
         </div>
 
-        <span class="badge">
-          ${escapeHtml(product.label || "ODG SELECT")}
-        </span>
+    
 
       </div>
 
