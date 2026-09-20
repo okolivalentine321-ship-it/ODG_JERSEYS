@@ -25,10 +25,11 @@ productForm.addEventListener("submit", async (event) => {
   const price = Number(
     document.getElementById("productPrice").value
   );
- const category =
+const categories =
   [...document.getElementById("productCategory").selectedOptions]
     .map(option => option.value);
-  const categories = category;
+
+const category = categories[0] || null;
   const imageFile =
     document.getElementById("productImage").files[0];
 
