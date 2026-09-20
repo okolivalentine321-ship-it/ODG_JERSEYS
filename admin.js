@@ -28,6 +28,7 @@ productForm.addEventListener("submit", async (event) => {
  const category =
   [...document.getElementById("productCategory").selectedOptions]
     .map(option => option.value);
+  const categories = category;
   const imageFile =
     document.getElementById("productImage").files[0];
 
@@ -66,13 +67,14 @@ productForm.addEventListener("submit", async (event) => {
     await supabaseClient
       .from("products")
       .insert([
-        {
-          name: name,
-          price: price,
-          category: category,
-          image: imageUrl,
-          description: description
-        }
+       {
+  name: name,
+  price: price,
+  category: category[0] || null,
+  categories: categories,
+  image: imageUrl,
+  description: description
+}
       ]);
 
   if (insertError) {
