@@ -129,9 +129,13 @@ function filteredProducts() {
 
   return PRODUCTS.filter(product => {
 
-    const categoryMatch =
-      activeFilter === "all" ||
-      product.category === activeFilter;
+   const productCategories = Array.isArray(product.categories)
+  ? product.categories
+  : [product.category];
+
+const categoryMatch =
+  activeFilter === "all" ||
+  productCategories.includes(activeFilter);
 
     const text = `
       ${product.name}
