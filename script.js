@@ -198,13 +198,15 @@ function renderProducts() {
 
       </div>
 
-      <div class="product-info">
-
-        <div class="product-category">
-         ${(product.categories || [product.category])
-  .map(category => prettyCategory(category))
-  .join(" • ")}
-        </div>
+     <div class="product-category">
+  ${(
+    Array.isArray(product.categories)
+      ? product.categories
+      : [product.categories || product.category]
+  )
+    .map(category => prettyCategory(category))
+    .join(" • ")}
+</div>
 
         <h3>
           ${escapeHtml(product.name)}
