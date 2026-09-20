@@ -304,11 +304,12 @@ updateButton.addEventListener("click", async () => {
   const { error } = await supabaseClient
     .from("products")
     .update({
-      name: editName.value,
-      price: Number(editPrice.value),
-      category: editCategory.value,
-      description: editDescription.value
-    })
+  name: editName.value,
+  price: Number(editPrice.value),
+  category: editCategory.value[0] || null,
+  categories: [...editCategory.selectedOptions].map(option => option.value),
+  description: editDescription.value
+})
     .eq("id", productId);
 
   if (error) {
