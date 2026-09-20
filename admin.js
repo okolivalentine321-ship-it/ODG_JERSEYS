@@ -290,7 +290,7 @@ editProduct.addEventListener("change", async () => {
 
   editName.value = data.name || "";
   editPrice.value = data.price || "";
-  editCategory.value = data.category || "";
+ editCategory.value = data.categories || [];
   editDescription.value = data.description || "";
 });
 updateButton.addEventListener("click", async () => {
