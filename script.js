@@ -198,7 +198,9 @@ function renderProducts() {
       <div class="product-info">
 
         <div class="product-category">
-          ${prettyCategory(product.category)}
+         ${(product.categories || [product.category])
+  .map(category => prettyCategory(category))
+  .join(" • ")}
         </div>
 
         <h3>
