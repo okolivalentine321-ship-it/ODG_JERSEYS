@@ -104,11 +104,14 @@ function escapeHtml(value) {
 // ================================
 
 function prettyCategory(category) {
-  const names = {
-    club: "Club Jerseys",
-    national: "National Jerseys",
-    retro: "Retro Jerseys"
-  };
+ const names = {
+  club: "Club Jerseys",
+  current: "Current Jerseys",
+  best: "Best Sellers",
+  new: "New Arrivals",
+  national: "National Jerseys",
+  retro: "Retro Jerseys"
+};
 
   return (
     names[category] ||
