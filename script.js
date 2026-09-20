@@ -58,10 +58,13 @@ async function loadProducts() {
     return;
   }
 
-  PRODUCTS = data || [];
+ PRODUCTS = data || [];
 
-  renderProducts();
-  renderCart();
+console.log("PRODUCTS FROM SUPABASE:", PRODUCTS);
+console.log("FIRST PRODUCT IMAGE:", PRODUCTS[0]?.image);
+
+renderProducts();
+renderCart();
 }
 loadProducts();
 let activeFilter = "all";
