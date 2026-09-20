@@ -135,13 +135,17 @@ function filteredProducts() {
 
   return PRODUCTS.filter(product => {
 
-   const productCategories = Array.isArray(product.categories)
-  ? product.categories
-  : [product.category];
+    const productCategories = Array.isArray(product.categories)
+      ? product.categories
+      : String(product.categories || product.category || "")
+          .replace(/[{}]/g, "")
+          .split(",")
+          .map(category => category.trim())
+          .filter(Boolean);
 
-const categoryMatch =
-  activeFilter === "all" ||
-  productCategories.includes(activeFilter);
+    const categoryMatch =
+      activeFilter === "all" ||
+      productCategories.includes(activeFilter);
 
     const text = `
       ${product.name}
@@ -155,7 +159,7 @@ const categoryMatch =
     );
   });
 }
-
+   
 
 // ================================
 // RENDER PRODUCTS
