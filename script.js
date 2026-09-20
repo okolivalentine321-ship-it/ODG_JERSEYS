@@ -62,7 +62,9 @@ async function loadProducts() {
 
 console.log("PRODUCTS FROM SUPABASE:", PRODUCTS);
 console.log("FIRST PRODUCT IMAGE:", PRODUCTS[0]?.image);
-
+console.log("FIRST PRODUCT CATEGORIES:", PRODUCTS[0]?.categories);
+console.log("CATEGORIES TYPE:", typeof PRODUCTS[0]?.categories);
+console.log("IS ARRAY:", Array.isArray(PRODUCTS[0]?.categories));
 renderProducts();
 renderCart();
 }
