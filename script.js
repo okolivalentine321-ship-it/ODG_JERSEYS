@@ -498,15 +498,18 @@ function openSizeModal(id) {
   });
 
   sizeModal.classList.add("open");
+sizeModal.setAttribute("aria-hidden", "false");
 }
 
 
 function closeSizeModal() {
 
   sizeModal.classList.remove("open");
+  sizeModal.setAttribute("aria-hidden", "true");
 
   selectedProduct = null;
   selectedSize = null;
+}
 }
 
 
