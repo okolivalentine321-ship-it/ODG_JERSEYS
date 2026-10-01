@@ -513,7 +513,7 @@ function closeSizeModal() {
   selectedProduct = null;
   selectedSize = null;
 }
-}
+
 
 
 // ================================
