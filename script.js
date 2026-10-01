@@ -44,7 +44,19 @@ const sizeOrder = document.getElementById("sizeOrder");
 // LOAD PRODUCTS FROM SUPABASE
 // ================================
 
+
+
+
+
 let PRODUCTS = [];
+
+let activeFilter = "all";
+let selectedProduct = null;
+let selectedSize = null;
+
+let cart = JSON.parse(
+  localStorage.getItem("odg_cart") || "[]"
+);
 
 async function loadProducts() {
   const { data, error } = await supabaseClient
@@ -58,24 +70,15 @@ async function loadProducts() {
     return;
   }
 
- PRODUCTS = data || [];
+  PRODUCTS = data || [];
 
-console.log("PRODUCTS FROM SUPABASE:", PRODUCTS);
-console.log("FIRST PRODUCT IMAGE:", PRODUCTS[0]?.image);
-console.log("FIRST PRODUCT CATEGORIES:", PRODUCTS[0]?.categories);
-console.log("CATEGORIES TYPE:", typeof PRODUCTS[0]?.categories);
-console.log("IS ARRAY:", Array.isArray(PRODUCTS[0]?.categories));
-renderProducts();
-renderCart();
+  console.log("PRODUCTS FROM SUPABASE:", PRODUCTS);
+
+  renderProducts();
+  renderCart();
 }
-loadProducts();
-let activeFilter = "all";
-let selectedProduct = null;
-let selectedSize = null;
 
-let cart = JSON.parse(
-  localStorage.getItem("odg_cart") || "[]"
-);
+loadProducts();
 
 
 // ================================
