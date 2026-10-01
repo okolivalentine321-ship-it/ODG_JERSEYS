@@ -1,3 +1,4 @@
+```javascript
 const SUPABASE_URL = "https://fbsvgzvwzkceyoekhvna.supabase.co";
 const SUPABASE_KEY = "sb_publishable_GePnsf15J-bXPZhPrnL5JQ_qdJTMdiA";
 
@@ -8,78 +9,164 @@ const supabaseClient = supabase.createClient(
 
 console.log("Admin Supabase connected");
 
+
+// ========================================
+// ELEMENTS
+// ========================================
+
 const productForm = document.getElementById("productForm");
 const status = document.getElementById("status");
 
+const productCategory =
+  document.getElementById("productCategory");
 
-// ================================
+const deleteProductSelect =
+  document.getElementById("deleteProduct");
+
+const deleteButton =
+  document.getElementById("deleteButton");
+
+const editProduct =
+  document.getElementById("editProduct");
+
+const editName =
+  document.getElementById("editName");
+
+const editPrice =
+  document.getElementById("editPrice");
+
+const editCategory =
+  document.getElementById("editCategory");
+
+const editDescription =
+  document.getElementById("editDescription");
+
+const updateButton =
+  document.getElementById("updateButton");
+
+
+// ========================================
 // ADD NEW JERSEY
-// ================================
+// ========================================
 
 productForm.addEventListener("submit", async (event) => {
+
   event.preventDefault();
 
   status.textContent = "Adding jersey...";
 
-  const name = document.getElementById("productName").value;
-  const price = Number(
-    document.getElementById("productPrice").value
-  );
-const categories =
-  [...document.getElementById("productCategory").selectedOptions]
-    .map(option => option.value);
 
-const category = categories[0] || null;
+  const name =
+    document.getElementById("productName").value.trim();
+
+  const price =
+    Number(document.getElementById("productPrice").value);
+
+
+  // GET ALL SELECTED CATEGORIES
+  const categories =
+    [...productCategory.selectedOptions]
+      .map(option => option.value);
+
+
   const imageFile =
     document.getElementById("productImage").files[0];
 
-  const description =
-    document.getElementById("productDescription").value;
 
-  if (!imageFile) {
-    status.textContent = "Please choose an image.";
+  const description =
+    document.getElementById("productDescription").value.trim();
+
+
+  // ========================================
+  // VALIDATION
+  // ========================================
+
+  if (categories.length === 0) {
+    status.textContent =
+      "Please select at least one category.";
+
     return;
   }
 
+
+  if (!imageFile) {
+    status.textContent =
+      "Please choose an image.";
+
+    return;
+  }
+
+
+  // ========================================
+  // UPLOAD IMAGE
+  // ========================================
+
   const fileName =
     `${Date.now()}-${imageFile.name}`;
+
 
   const { error: uploadError } =
     await supabaseClient.storage
       .from("product-images")
       .upload(fileName, imageFile);
 
+
   if (uploadError) {
+
     console.error(uploadError);
-    status.textContent = "Image upload failed.";
+
+    status.textContent =
+      "Image upload failed.";
+
     return;
   }
+
 
   const { data: publicUrlData } =
     supabaseClient.storage
       .from("product-images")
       .getPublicUrl(fileName);
 
-  const imageUrl = publicUrlData.publicUrl;
+
+  const imageUrl =
+    publicUrlData.publicUrl;
+
 
   console.log("Image uploaded:", imageUrl);
+
+
+  // ========================================
+  // SAVE PRODUCT
+  // ========================================
 
   const { error: insertError } =
     await supabaseClient
       .from("products")
       .insert([
-       {
-  name: name,
-  price: price,
-  category: category[0] || null,
-  categories: categories,
-  image: imageUrl,
-  description: description
-}
+        {
+          name: name,
+
+          price: price,
+
+          // Main/original category
+          category: categories[0],
+
+          // ALL categories
+          categories: categories,
+
+          image: imageUrl,
+
+          description: description
+        }
       ]);
 
+
   if (insertError) {
-    console.error("DATABASE ERROR:", insertError);
+
+    console.error(
+      "DATABASE ERROR:",
+      insertError
+    );
 
     status.textContent =
       `Database error: ${insertError.message}`;
@@ -87,37 +174,59 @@ const category = categories[0] || null;
     return;
   }
 
+
   status.textContent =
     "Jersey added successfully!";
 
+
   productForm.reset();
 
-  loadProductsForAdmin();
+
+  await loadProductsForAdmin();
+
+  await loadProductsForEdit();
+
+  await loadProductsForDelete();
+
 });
 
 
-// ================================
-// LOAD PRODUCTS
-// ================================
+// ========================================
+// LOAD EXISTING PRODUCTS
+// ========================================
 
 async function loadProductsForAdmin() {
 
   const productsList =
     document.getElementById("productsList");
 
+
   productsList.innerHTML =
     "Loading products...";
+
 
   const { data, error } =
     await supabaseClient
       .from("products")
       .select("*")
-      .order("id", { ascending: true });
+      .order("id", {
+        ascending: true
+      });
 
-  console.log("ADMIN PRODUCTS:", data);
-  console.log("ADMIN ERROR:", error);
+
+  console.log(
+    "ADMIN PRODUCTS:",
+    data
+  );
+
+  console.log(
+    "ADMIN ERROR:",
+    error
+  );
+
 
   if (error) {
+
     console.error(error);
 
     productsList.innerHTML =
@@ -125,6 +234,7 @@ async function loadProductsForAdmin() {
 
     return;
   }
+
 
   if (!data || data.length === 0) {
 
@@ -134,36 +244,58 @@ async function loadProductsForAdmin() {
     return;
   }
 
+
   productsList.innerHTML = "";
+
 
   data.forEach(product => {
 
     const productDiv =
       document.createElement("div");
 
+
+    const categories =
+      Array.isArray(product.categories)
+        ? product.categories.join(", ")
+        : product.category || "None";
+
+
     productDiv.innerHTML = `
+
       <hr>
 
       <h3>${product.name}</h3>
 
-      <p>₦${Number(product.price).toLocaleString()}</p>
+      <p>
+        ₦${Number(product.price).toLocaleString()}
+      </p>
 
-      <p>${product.category}</p>
+      <p>
+        Categories: ${categories}
+      </p>
 
-      <button onclick="deleteProduct(${product.id})">
+      <button
+        type="button"
+        onclick="deleteProduct(${product.id})"
+      >
         Delete
       </button>
+
     `;
 
-    productsList.appendChild(productDiv);
+
+    productsList.appendChild(
+      productDiv
+    );
 
   });
+
 }
 
 
-// ================================
+// ========================================
 // DELETE PRODUCT
-// ================================
+// ========================================
 
 async function deleteProduct(id) {
 
@@ -172,9 +304,11 @@ async function deleteProduct(id) {
       "Are you sure you want to delete this jersey?"
     );
 
+
   if (!confirmed) {
     return;
   }
+
 
   const { error } =
     await supabaseClient
@@ -182,9 +316,13 @@ async function deleteProduct(id) {
       .delete()
       .eq("id", id);
 
+
   if (error) {
 
-    console.error(error);
+    console.error(
+      "DELETE ERROR:",
+      error
+    );
 
     alert(
       "Could not delete the jersey."
@@ -193,134 +331,348 @@ async function deleteProduct(id) {
     return;
   }
 
+
   alert(
     "Jersey deleted successfully."
   );
 
-  loadProductsForAdmin();
+
+  await loadProductsForAdmin();
+
+  await loadProductsForEdit();
+
+  await loadProductsForDelete();
+
 }
 
 
-// ================================
-// LOAD PRODUCTS WHEN PAGE OPENS
-// ================================
+// ========================================
+// LOAD DELETE DROPDOWN
+// ========================================
 
-loadProductsForAdmin();
-deleteButton.addEventListener("click", async () => {
-  const productId = deleteProduct.value;
+async function loadProductsForDelete() {
 
-  if (!productId) {
-    alert("Please select a jersey to delete.");
+  if (!deleteProductSelect) {
     return;
   }
 
-  const confirmed = confirm("Are you sure you want to delete this jersey?");
 
-  if (!confirmed) {
-    return;
-  }
+  const { data, error } =
+    await supabaseClient
+      .from("products")
+      .select("id, name")
+      .order("id", {
+        ascending: true
+      });
 
-  const { error } = await supabaseClient
-    .from("products")
-    .delete()
-    .eq("id", productId);
 
   if (error) {
-    console.error("DELETE ERROR:", error);
-    alert("Jersey could not be deleted.");
+
+    console.error(
+      "DELETE LOAD ERROR:",
+      error
+    );
+
     return;
   }
 
-  alert("Jersey deleted successfully!");
 
-  loadProductsForDelete();
-});
-const editProduct = document.getElementById("editProduct");
-const editName = document.getElementById("editName");
-const editPrice = document.getElementById("editPrice");
-const editCategory = document.getElementById("editCategory");
-const editDescription = document.getElementById("editDescription");
-const updateButton = document.getElementById("updateButton");
+  deleteProductSelect.innerHTML =
+    '<option value="">Select jersey to delete</option>';
+
+
+  data.forEach(product => {
+
+    const option =
+      document.createElement("option");
+
+
+    option.value =
+      product.id;
+
+
+    option.textContent =
+      product.name;
+
+
+    deleteProductSelect.appendChild(
+      option
+    );
+
+  });
+
+}
+
+
+// ========================================
+// DELETE USING DROPDOWN
+// ========================================
+
+deleteButton.addEventListener(
+  "click",
+  async () => {
+
+    const productId =
+      deleteProductSelect.value;
+
+
+    if (!productId) {
+
+      alert(
+        "Please select a jersey to delete."
+      );
+
+      return;
+    }
+
+
+    await deleteProduct(
+      productId
+    );
+
+  }
+);
+
+
+// ========================================
+// LOAD PRODUCTS FOR EDIT
+// ========================================
 
 async function loadProductsForEdit() {
-  const { data, error } = await supabaseClient
-    .from("products")
-    .select("*")
-    .order("id", { ascending: true });
+
+  const { data, error } =
+    await supabaseClient
+      .from("products")
+      .select("*")
+      .order("id", {
+        ascending: true
+      });
+
 
   if (error) {
-    console.error("EDIT LOAD ERROR:", error);
+
+    console.error(
+      "EDIT LOAD ERROR:",
+      error
+    );
+
     return;
   }
+
 
   editProduct.innerHTML =
     '<option value="">Select jersey to edit</option>';
 
-  data.forEach((product) => {
-    const option = document.createElement("option");
 
-    option.value = product.id;
-    option.textContent = product.name;
+  data.forEach(product => {
 
-    editProduct.appendChild(option);
+    const option =
+      document.createElement("option");
+
+
+    option.value =
+      product.id;
+
+
+    option.textContent =
+      product.name;
+
+
+    editProduct.appendChild(
+      option
+    );
+
   });
+
 }
 
+
+// ========================================
+// LOAD SELECTED PRODUCT INTO EDIT FORM
+// ========================================
+
+editProduct.addEventListener(
+  "change",
+  async () => {
+
+    const productId =
+      editProduct.value;
+
+
+    if (!productId) {
+
+      editName.value = "";
+
+      editPrice.value = "";
+
+      [...editCategory.options]
+        .forEach(option => {
+          option.selected = false;
+        });
+
+      editDescription.value = "";
+
+      return;
+    }
+
+
+    const { data, error } =
+      await supabaseClient
+        .from("products")
+        .select("*")
+        .eq("id", productId)
+        .single();
+
+
+    if (error) {
+
+      console.error(
+        "EDIT PRODUCT ERROR:",
+        error
+      );
+
+      return;
+    }
+
+
+    editName.value =
+      data.name || "";
+
+
+    editPrice.value =
+      data.price || "";
+
+
+    // ========================================
+    // SELECT ALL SAVED CATEGORIES
+    // ========================================
+
+    const savedCategories =
+      Array.isArray(data.categories)
+        ? data.categories
+        : data.category
+          ? [data.category]
+          : [];
+
+
+    [...editCategory.options]
+      .forEach(option => {
+
+        option.selected =
+          savedCategories.includes(
+            option.value
+          );
+
+      });
+
+
+    editDescription.value =
+      data.description || "";
+
+  }
+);
+
+
+// ========================================
+// UPDATE PRODUCT
+// ========================================
+
+updateButton.addEventListener(
+  "click",
+  async () => {
+
+    const productId =
+      editProduct.value;
+
+
+    if (!productId) {
+
+      alert(
+        "Please select a jersey to edit."
+      );
+
+      return;
+    }
+
+
+    const categories =
+      [...editCategory.selectedOptions]
+        .map(option => option.value);
+
+
+    if (categories.length === 0) {
+
+      alert(
+        "Please select at least one category."
+      );
+
+      return;
+    }
+
+
+    const { error } =
+      await supabaseClient
+        .from("products")
+        .update({
+
+          name:
+            editName.value.trim(),
+
+          price:
+            Number(editPrice.value),
+
+          // Main/original category
+          category:
+            categories[0],
+
+          // ALL categories
+          categories:
+            categories,
+
+          description:
+            editDescription.value.trim()
+
+        })
+        .eq("id", productId);
+
+
+    if (error) {
+
+      console.error(
+        "UPDATE ERROR:",
+        error
+      );
+
+      alert(
+        "Jersey could not be updated."
+      );
+
+      return;
+    }
+
+
+    alert(
+      "Jersey updated successfully!"
+    );
+
+
+    await loadProductsForEdit();
+
+    await loadProductsForDelete();
+
+    await loadProductsForAdmin();
+
+  }
+);
+
+
+// ========================================
+// INITIAL LOAD
+// ========================================
+
+loadProductsForAdmin();
+
 loadProductsForEdit();
-editProduct.addEventListener("change", async () => {
-  const productId = editProduct.value;
 
-  if (!productId) {
-    editName.value = "";
-    editPrice.value = "";
-    editCategory.value = "";
-    editDescription.value = "";
-    return;
-  }
-
-  const { data, error } = await supabaseClient
-    .from("products")
-    .select("*")
-    .eq("id", productId)
-    .single();
-
-  if (error) {
-    console.error("EDIT PRODUCT ERROR:", error);
-    return;
-  }
-
-  editName.value = data.name || "";
-  editPrice.value = data.price || "";
- editCategory.value = data.categories || [];
-  editDescription.value = data.description || "";
-});
-updateButton.addEventListener("click", async () => {
-  const productId = editProduct.value;
-
-  if (!productId) {
-    alert("Please select a jersey to edit.");
-    return;
-  }
-
-  const { error } = await supabaseClient
-    .from("products")
-    .update({
-  name: editName.value,
-  price: Number(editPrice.value),
-  category: editCategory.value[0] || null,
-  categories: [...editCategory.selectedOptions].map(option => option.value),
-  description: editDescription.value
-})
-    .eq("id", productId);
-
-  if (error) {
-    console.error("UPDATE ERROR:", error);
-    alert("Jersey could not be updated.");
-    return;
-  }
-
-  alert("Jersey updated successfully!");
-
-  loadProductsForEdit();
-  loadProductsForDelete();
-});
+loadProductsForDelete();
+```
