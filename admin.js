@@ -101,8 +101,8 @@ productForm.addEventListener("submit", async (event) => {
   // UPLOAD IMAGE
   // ========================================
 
-  const fileName =
-    `${Date.now()}-${imageFile.name}`;
+const fileName =
+  Date.now() + "-" + imageFile.name;
 
 
   const { error: uploadError } =
