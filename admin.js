@@ -1,4 +1,4 @@
-```javascript
+
 const SUPABASE_URL = "https://fbsvgzvwzkceyoekhvna.supabase.co";
 const SUPABASE_KEY = "sb_publishable_GePnsf15J-bXPZhPrnL5JQ_qdJTMdiA";
 
@@ -675,4 +675,4 @@ loadProductsForAdmin();
 loadProductsForEdit();
 
 loadProductsForDelete();
-```
+
